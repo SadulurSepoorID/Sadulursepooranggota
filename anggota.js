@@ -192,10 +192,17 @@ function verifyCode() {
     }
 }
 
-// Fungsi Mengarahkan ke WhatsApp untuk Meminta Kode
+// Link WhatsApp untuk dua admin
+const adminLinks = [
+    "https://wa.me/6282112964343?text=Saya+ingin+meminta+kode+verifikasi.",
+    "https://wa.me/6285695595471?text=Saya+ingin+meminta+kode+verifikasi."
+];
+
+// Fungsi Mengarahkan ke WhatsApp Admin secara Acak
 function requestVerificationCode() {
-    const message = "Saya ingin meminta kode verifikasi.";
-    window.location.href = `https://wa.me/6282112964343?text=${encodeURIComponent(message)}`;
+    // Pilih salah satu admin secara acak
+    const randomAdminLink = adminLinks[Math.floor(Math.random() * adminLinks.length)];
+    window.location.href = randomAdminLink;
 }
 
 // Tambahkan event listener untuk tombol filter dan sortir
