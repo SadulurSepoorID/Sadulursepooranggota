@@ -4,6 +4,16 @@ let filteredMembers = [];
 let activeSectorFilter = null;
 let activeSort = null;
 
+// Kode khusus admin dan kode acak untuk pengguna
+const adminCode = "Sadulursepoor12";
+const userCodes = [
+    "A1B2C", "X9Y8Z", "K3L4M", "G7H8I", "P5Q6R",
+    "U1V2W", "N3O4P", "Z5Y6X", "D7E8F", "M9N0O",
+    "J1K2L", "T3U4V", "W5X6Y", "B7C8D", "H9I0J"
+];
+
+let currentWhatsAppUrl = "";
+
 // Muat Data Anggota dari JSON
 fetch('anggota.json')
     .then(response => response.json())
@@ -14,7 +24,7 @@ fetch('anggota.json')
     })
     .catch(error => console.error('Gagal memuat data anggota:', error));
 
-// Fungsi Menampilkan Kartu Anggota
+// Menampilkan Kartu Anggota dengan Notifikasi Nama yang Tepat
 function displayMembers(members) {
     const membersContainer = document.getElementById('membersContainer');
     membersContainer.innerHTML = '';
@@ -42,7 +52,11 @@ function displayMembers(members) {
                     <p><strong>Tanggal Lahir:</strong> ${member.tanggalLahir}</p>
                     
                     <div class="social-icons">
-                        ${member.whatsapp ? `<a href="${member.whatsapp}" target="_blank" class="whatsapp-icon"><i class="fab fa-whatsapp"></i></a>` : ''}
+                        ${member.whatsapp ? 
+                            `<a href="javascript:void(0);" onclick="openCodePopup('${member.whatsapp}', '${member.name}')" class="whatsapp-icon">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>` 
+                        : ''}
                         ${member.instagram ? `<a href="${member.instagram}" target="_blank" class="instagram-icon"><i class="fab fa-instagram"></i></a>` : ''}
                     </div>
                 </div>
@@ -141,14 +155,50 @@ function closeConfirmation() {
     document.querySelector('.photo-confirmation').remove();
 }
 
-// Fungsi Mengarahkan ke WhatsApp
-function redirectToWhatsApp(name, kta) {
-    closeConfirmation();
-    const waUrl = `https://wa.me/6282112964343?text=*(${kta}):+${encodeURIComponent(name)}*+ingin+merubah+foto+di+website`;
-    window.location.href = waUrl;
+// Fungsi Membuka Popup Kode Verifikasi dengan Nama Identitas
+function openCodePopup(waUrl, name) {
+    currentWhatsAppUrl = waUrl;
+    currentName = name;
+
+    const popup = document.getElementById('codeVerificationPopup');
+    const infoText = document.getElementById('verificationInfo');
+
+    // Memastikan nama tidak "undefined" dan ditampilkan dengan benar
+    if (name) {
+        infoText.innerHTML = `Apakah Anda ingin menghubungi <strong>${name}</strong>? 
+        Admin tidak mengetahui siapa yang Anda chat atau terenkripsi secara end-to-end.`;
+    } else {
+        infoText.innerHTML = `Apakah Anda yakin ingin melanjutkan? 
+        Admin tidak mengetahui siapa yang Anda chat atau terenkripsi secara end-to-end.`;
+    }
+    
+    popup.style.display = 'block';
 }
 
-// Tambahkan event listener ke tombol filter sektor dan sortir setelah halaman dimuat
+// Fungsi Menutup Popup Kode
+function closeCodePopup() {
+    document.getElementById('codeVerificationPopup').style.display = 'none';
+    document.getElementById('verificationCodeInput').value = "";
+}
+
+// Fungsi Verifikasi Kode
+function verifyCode() {
+    const inputCode = document.getElementById('verificationCodeInput').value.trim();
+    if (inputCode === adminCode || userCodes.includes(inputCode)) {
+        window.location.href = currentWhatsAppUrl;
+        closeCodePopup();
+    } else {
+        alert("Kode tidak valid! Silakan coba lagi.");
+    }
+}
+
+// Fungsi Mengarahkan ke WhatsApp untuk Meminta Kode
+function requestVerificationCode() {
+    const message = "Saya ingin meminta kode verifikasi.";
+    window.location.href = `https://wa.me/6282112964343?text=${encodeURIComponent(message)}`;
+}
+
+// Tambahkan event listener untuk tombol filter dan sortir
 document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.sector-filter').forEach(button => {
         button.addEventListener('click', function() {
