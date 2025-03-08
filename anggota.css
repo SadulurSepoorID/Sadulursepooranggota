@@ -328,6 +328,116 @@ input[type="text"] {
     background-color: #218838;
 }
 
+/* Notifikasi Kode Verifikasi Berhasil */
+.success-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    width: 300px;
+    max-width: 80%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1500;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.success-notification h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #28a745;
+}
+
+.success-notification p {
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Animasi Ceklis Modern */
+.checkmark {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.checkmark-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #28a745;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: circleScale 0.6s ease forwards;
+}
+
+.checkmark-icon {
+    font-size: 50px;
+    color: white;
+    transform: scale(0);
+    animation: checkmarkScale 0.3s 0.4s forwards;
+}
+
+/* Notifikasi Kode Tidak Valid */
+.error-notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 30px;
+    width: 300px;
+    max-width: 80%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1500;
+    border-radius: 15px;
+    text-align: center;
+    animation: fadeIn 0.5s ease;
+}
+
+.error-notification h2 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #dc3545;
+}
+
+.error-notification p {
+    color: #555;
+    margin-top: 10px;
+}
+
+/* Animasi Silang (X) Modern */
+.crossmark {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.crossmark-circle {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: #dc3545;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: circleScale 0.6s ease forwards;
+}
+
+.crossmark-icon {
+    font-size: 50px;
+    color: white;
+    transform: scale(0);
+    animation: crossmarkScale 0.3s 0.4s forwards;
+}
+
 /* Animasi Masuk */
 @keyframes fadeIn {
     from {
@@ -337,5 +447,52 @@ input[type="text"] {
     to {
         opacity: 1;
         transform: translate(-50%, -50%);
+    }
+}
+
+/* Animasi Lingkaran */
+@keyframes circleScale {
+    from {
+        transform: scale(0);
+        opacity: 0.2;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animasi Ikon Silang */
+@keyframes crossmarkScale {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Animasi Ceklis */
+@keyframes circleScale {
+    from {
+        transform: scale(0);
+        opacity: 0.2;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes checkmarkScale {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
     }
 }

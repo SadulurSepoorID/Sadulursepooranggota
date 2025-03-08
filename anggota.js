@@ -181,14 +181,33 @@ function closeCodePopup() {
     document.getElementById('verificationCodeInput').value = "";
 }
 
+// Fungsi Menampilkan Notifikasi Sukses
+function showSuccessNotification() {
+    const notification = document.getElementById('successNotification');
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+        window.location.href = currentWhatsAppUrl;
+    }, 2000);
+}
+
+// Fungsi Menampilkan Notifikasi Kode Tidak Valid
+function showErrorNotification() {
+    const notification = document.getElementById('errorNotification');
+    notification.style.display = 'block';
+    setTimeout(() => {
+        notification.style.display = 'none';
+    }, 2000);
+}
+
 // Fungsi Verifikasi Kode
 function verifyCode() {
     const inputCode = document.getElementById('verificationCodeInput').value.trim();
     if (inputCode === adminCode || userCodes.includes(inputCode)) {
-        window.location.href = currentWhatsAppUrl;
         closeCodePopup();
+        showSuccessNotification();
     } else {
-        alert("Kode tidak valid! Silakan coba lagi.");
+        showErrorNotification();
     }
 }
 
