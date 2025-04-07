@@ -60,7 +60,7 @@
         "sektor": "1 Jakarta",
         "jenisKelamin": "Pria",
         "domisili": "Serang",
-        "tanggalLahir": "08 Agustus 1997",
+        "tanggalLahir": "8 Agustus 1997",
         "photoUrl": "https://i.ibb.co.com/wQh3G1v/1000193004.jpg",
         "whatsapp": "https://wa.me/6281212978400",
         "instagram": "https://www.instagram.com/mikoto_albantani_137?igsh=cjI5Znh3MzY2Ymt5"
@@ -125,7 +125,7 @@
         "kta": "SS-0019",
         "sektor": "1 Jakarta",
         "jenisKelamin": "Pria",
-        "domisili": "Depok",
+        "domisili": "Cakung",
         "tanggalLahir": "08 April 1994",
         "photoUrl": "https://i.imgur.com/8mNmF8o.jpeg",
         "whatsapp": "",
@@ -214,7 +214,7 @@
         "sektor": "1 Jakarta",
         "jenisKelamin": "Pria",
         "domisili": "Kalibata",
-        "tanggalLahir": "",
+        "tanggalLahir": "14 April 2007",
         "photoUrl": "",
         "whatsapp": "https://wa.me/6285776678197",
         "instagram": ""
@@ -473,17 +473,6 @@
     "instagram": ""
 },
 {
-    "name": "Adam Ramy Esfandiar",
-    "kta": "SS-0043",
-    "sektor": "1 Jakarta",
-    "jenisKelamin": "Pria",
-    "domisili": "Citayam",
-    "tanggalLahir": "",
-    "photoUrl": "",
-    "whatsapp": "https://wa.me/6285163516076",
-    "instagram": ""
-},
-{
     "name": "Rubben Pradita",
     "kta": "SS-0057",
     "sektor": "1 Jakarta",
@@ -503,39 +492,6 @@
         "tanggalLahir": "",
         "photoUrl": "",
         "whatsapp": "https://wa.me/6287774712008",
-        "instagram": ""
-    },
-    {
-        "name": "Faraz Kharisma",
-        "kta": "SS-0022",
-        "sektor": "1 Jakarta",
-        "jenisKelamin": "Pria",
-        "domisili": "Depok",
-        "tanggalLahir": "",
-        "photoUrl": "",
-        "whatsapp": "https://wa.me/6285810029181",
-        "instagram": ""
-    },
-    {
-        "name": "Imam Arif Badawi",
-        "kta": "SS-0010",
-        "sektor": "1 Jakarta",
-        "jenisKelamin": "Pria",
-        "domisili": "Cilebut",
-        "tanggalLahir": "",
-        "photoUrl": "",
-        "whatsapp": "https://wa.me/6289513488965",
-        "instagram": ""
-    },
-    {
-        "name": "Febri Fitrianto",
-        "kta": "SS-0020",
-        "sektor": "1 Jakarta",
-        "jenisKelamin": "Pria",
-        "domisili": "Tangerang",
-        "tanggalLahir": "",
-        "photoUrl": "",
-        "whatsapp": "https://wa.me/6282210433272",
         "instagram": ""
     },
     {
@@ -671,17 +627,6 @@
     "instagram": ""
 },
 {
-    "name": "Andhika Faris",
-    "kta": "SS-0027",
-    "sektor": "1 Jakarta",
-    "jenisKelamin": "Pria",
-    "domisili": "Harjamukti",
-    "tanggalLahir": "",
-    "photoUrl": "",
-    "whatsapp": "",
-    "instagram": ""
-},
-{
     "name": "Vincent Vasca Valentino",
     "kta": "SS-0145",
     "sektor": "1 Jakarta",
@@ -737,17 +682,6 @@
     "instagram": ""
 },
 {
-    "name": "Mochamad Putrama Wijaya",
-    "kta": "SS-0018",
-    "sektor": "1 Jakarta",
-    "jenisKelamin": "Pria",
-    "domisili": "Ciputat Timur",
-    "tanggalLahir": "",
-    "photoUrl": "",
-    "whatsapp": "",
-    "instagram": ""
-},
-{
     "name": "Diwa Anugrah Ramadhan",
     "kta": "SS-0111",
     "sektor": "1 Jakarta",
@@ -764,17 +698,6 @@
     "sektor": "1 Jakarta",
     "jenisKelamin": "Pria",
     "domisili": "Menteng",
-    "tanggalLahir": "",
-    "photoUrl": "",
-    "whatsapp": "",
-    "instagram": ""
-},
-{
-    "name": "Muhammad Iqbal Addin",
-    "kta": "SS-0015",
-    "sektor": "1 Jakarta",
-    "jenisKelamin": "Pria",
-    "domisili": "Lenteng Agung",
     "tanggalLahir": "",
     "photoUrl": "",
     "whatsapp": "",
@@ -1000,7 +923,7 @@
     "whatsapp": "",
     "instagram": ""
 },
-    {
+{
     "name": "Ramadhan Arya Prayoga",
     "kta": "SS-0216",
     "sektor": "1 Jakarta",
@@ -1009,6 +932,17 @@
     "tanggalLahir": "",
     "photoUrl": "",
     "whatsapp": "https://wa.me/6285886825142",
+    "instagram": ""
+},
+{
+    "name": "Ananda Febriyanti",
+    "kta": "SS-0261",
+    "sektor": "1 Jakarta",
+    "jenisKelamin": "Wanita",
+    "domisili": "Klender Baru",
+    "tanggalLahir": "",
+    "photoUrl": "",
+    "whatsapp": "",
     "instagram": ""
 },
 {
