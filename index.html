@@ -1,230 +1,144 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <style>
-    html {
-    scroll-behavior: smooth;
-}
-        .pengurus-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #ccc;
-            padding: 10px 0;
-        }
-        .pengurus-details {
-            flex-grow: 1;
-        }
-        .pengurus-photo {
-            margin-left: 20px;
-        }
-        .pengurus-photo img {
-            width: 100px;
-            height: 100px;
-            object-fit: cover;
-            border-radius: 50%;
-        }
-    </style>
+    <title>Dashboard Anggota</title>
+    <link rel="stylesheet" href="weblogin.css">
 </head>
 <body>
-
-    <!-- Header section -->
     <header>
-        <nav>
-          <img src="https://i.imgur.com/9rAb7r7.png" alt="Logo" class="logo">
-            <div class="hamburger" onclick="toggleMenu()">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </div>
-        </nav>
+        <h1 id="welcome-message"></h1>
+        <p id="member-kta"></p>
+        <p id="warning-message" class="warning">
+  Peringatan: Jangan bagikan informasi ini ke luar komunitas, karena ini adalah informasi pribadi yang hanya untuk anggota.
+</p>
     </header>
-<nav id="menu" class="menu">
-        <ul>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="http://www.google.com/url?q=http%3A%2F%2Fbit.ly%2FPendaftaranSadulurSepoor&sa=D&sntz=1&usg=AOvVaw2Y76CFGcM5kRmJ5jgzA-53">Register</a></li>
-            <li><a href="formulir.html">Wawancara</a></li>
-        </ul>
+
+    <div class="menu-toggle" onclick="toggleMenu()">☰ Menu</div>
+
+    <nav>
+        <a href="https://sadulursepoorid.github.io/Sadulursepoorid/">Log Out</a>
+        <a href="kegiatan.html">Kegiatan</a>
+        <a href="https://sadulursepoorid.github.io/AbsensiSadulurSepoor/">Absensi</a>
     </nav>
-     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('menu');
-            menu.classList.toggle('active');
-        }
-    </script>
-    <!-- Main section -->
-    <main>
-      <section id="features">
-    <div class="feature">
-        <h3>APA ITU KOMUNITAS SADULUR SEPOOR ?</h3>
-        <p>Komunitas Railfans SADULUR SEPOOR yang lebih dikenal komunitas SS merupakan wadah bagi para pecinta kereta api Indonesia baik yang berasal  dari individu/perorangan maupun kelompok/komunitas/organisasi lainnya. Didirikan oleh Herie Heryadi, Arjuna Pamungkas, Aldino Arya Saputra, Habibi Muhammad Arkam dan Ahmad Suseno pada tanggal 19 Maret 2019 di Cikini Jakarta Pusat.</p>
-    </div>
-    <div class="feature">
-        <h3>VISI</h3>
-        <p>Menjadi komunitas yang di segani dan sebagai penggerak perubahan masyarakat perkeretaapian yang lebih baik dan disiplin, rasa memiliki yang tinggi, saling menghormati dan ikut serta menjaga aset aset perkeretaapian</p>
-    </div>
-    <div class="feature">
-        <h3>MISI</h3>
-        <p>Mendorong regulator dan operator untuk menghasilkan keputusan-keputusan yang memberi manfaat untuk perkeretaapian menjadi lebih baik.</p>
-        <p>Mengajak serta semua pengguna dan atau masyarakat untuk memahami dan mematuhi ketentuan-ketentuan yang telah ditetapkan Regulator dan Operator serta menanamkan rasa memiliki yang tinggi terhadap perkeretaapian</p>
-    </div>
+
+<section id="news-ticker">
+  <h2>Berita Terbaru</h2>
+  <h3>(<< Swipe Berita >>)</h3>
+  <br>
+  <div class="news-wrapper">
+    <ul class="news-list">
+      
+      <li class="news-slide">
+        <a href="gapeka.html">
+          <img src="https://i.imgur.com/TlAAAdS.jpeg" alt="Gapeka 2025">
+          <div class="news-content">
+            <h3>Gapeka 2025</h3>
+            <p>Ikutin jadwal terbaru sekarang makin mudah! Lewat fitur GAPEKA 2025, kamu bisa akses info jadwal kereta api yang sudah disesuaikan dengan grafik perjalanan yang telah di terapkan oleh PT KAI. Buat kamu yang aktif ngikutin dunia perkeretaapian, fitur ini wajib banget dicoba!.</p>
+          </div>
+        </a>
+      </li>
+      
+      <li class="news-slide">
+        <a href="pola kci.html">
+          <img src="https://i.imgur.com/uBQUZGp.jpeg" alt="Gapeka 2025">
+          <div class="news-content">
+            <h3>Pola Krl Jabodetabek (Masih tahap pengembangan)</h3>
+            <p>Sekarang cari nomor perjalanan KRL makin gampang! Dengan fitur Pola Dinas, kamu tinggal masukin nomor perka, dan langsung muncul info lengkapnya. Nggak perlu lagi buka file panjang-panjang, semuanya bisa kamu akses dengan cepat dan praktis.</p>
+          </div>
+        </a>
+      </li>
+      <!-- Tambah <li> untuk berita lainnya jika ada -->
+    </ul>
+  </div>
 </section>
 
-        <section id="home">
-            <h1>Profil</h1>
-            <p>Yuk kita intip apa saja kegiatan yang sudah dilakukan Sadulur Sepoor terutama untuk masyarakat sekitar. Penasaran ya? di pencet tombol yang di bawah yaa</p>
-            <a href="profile2.html" class="button">Profil</a>
-            </section>
+    <section id="about">
+        <div class="content-box">
+            <h2>Pencarian tentang Perkeretaapian</h2>
+            <p>Cari informasi tentang sarana, jadwal, stamformasi KA, dan berita.</p>
+            <a href="pencarian.html" class="btn">Mulai Pencarian</a>
+        </div>
+        <div class="content-box">
+            <h2>Struktur Anggota Aktif</h2>
+            <p>Daftar anggota Sadulur Sepoor Indonesia.</p>
+            <a href="https://sadulursepoorid.github.io/Sadulursepooranggota/" class="btn">Cek Selengkapnya</a>
+        </div>
+        <div class="content-box">
+            <h2>Kuis seputar kereta api</h2>
+            <p>Permainan tanya jawab seru seputar perkeretaapian.</p>
+            <a href="quiz.html" class="btn">Ayo Mulai!!!</a>
+        </div>
+        <div class="content-box">
+            <h2>Ulang Tahun Anggota</h2>
+            <p>Daftar ulang tahun anggota di bulan April 2025.</p>
+            <a href="ultah.html" class="btn">Baca Selengkapnya</a>
+        </div>
+        <div class="content-box">
+            <h2>MERCHANDISE</h2>
+            <p>Rapikan pakaianmu saat kegiatan internal Komunitas SADULUR SEPOOR :)</p>
+            <a href="payment.html" class="btn">Baca Selengkapnya</a>
+        </div>
+    </section>
 
-        <section id="home">
-            <h1>SSMAIL</h1>
-            <p>SSMAIL menyimpan berbagai file arsip resmi yang dapat diakses oleh anggota. Setiap dokumen disusun berdasarkan kategori dan dilengkapi dengan deskripsi singkat.</p>
-            <a href="loginmail.html" class="button">SSMAIL</a>
-            </section>
-
-        <section id="about">
-            <h2>Susunan Kepengurusan</h2>
-            <p>"Tak kenal maka tak sayang"</p>
-            <p>Tau kata-kata itu kan? nah... daripada emosional, mending kenalan sama pengurus yang sekarang</p>
-            <div class="pengurus-container">
-    <div class="pengurus-details">
-        <h3>Herie Haryadi</h3>
-        <p>Jabatan: Pembina & Penasehat Sadulur Sepoor</p>
-        <p>Domisili: Jakarta Utara</p>
-    </div>
-    <div class="pengurus-photo">
-        <img src="https://i.ibb.co.com/bmH1Dcz/IMG-20240923-184352.jpg">
-    </div>
-</div>
-
-<div class="pengurus-container">
-    <div class="pengurus-details">
-        <h3>Arjuna Pamungkas</h3>
-        <p>Jabatan: Ketua Sadulur Sepoor</p>
-        <p>Domisili: Jakarta Timur</p>
-    </div>
-    <div class="pengurus-photo">
-        <img src="https://i.ibb.co.com/WV5h00V/IMG-20240923-184411.jpg">
-    </div>
-   </div>
-   
-<div class="pengurus-container">
-    <div class="pengurus-details">
-        <h3>Mohammad Walid Ridho</h3>
-        <p>Jabatan: Wakil Ketua Sadulur Sepoor</p>
-        <p>Domisili: Jakarta Pusat</p>
-    </div>
-    <div class="pengurus-photo">
-        <img src="https://i.ibb.co.com/gP8vGGr/IMG-20240923-185525.jpg">
-    </div>
-   </div>
-   <a href="pengurus2.html" class="button">Lihat Susunan Kepengurusan</a>
-        </section>
-        <section id="services">
-            <h2>Akun Media Sosial</h2>
-            <ul>
-            <a href="https://youtube.com/@sadulursepoor" target="_blank">Youtube</a>
-            <a href="https://www.tiktok.com/@sadulur.sepoor_official?_t=8puqjiITt58&_r=1" target="_blank">Tiktok</a>
-            <a href="https://www.instagram.com/sadulursepoor_id?igsh=bHNvcTI4ZmNiejBv" target="_blank">Instagram</a>
-            </ul>
-        </section>
-        
-<section id="contact" class="form-container">
-    <h2>Contact Us</h2>
-    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
-        <input type="hidden" name="access_key" value="480fcbcf-de9e-4081-b5a6-3099c8b2de28">
-
-        <input type="text" id="name" name="name" placeholder="Your Name" required>
-        <input type="email" id="email" name="email" placeholder="Your Email" required>
-        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
-
-        <button type="submit" class="submit-btn">Send Message</button>
-    </form>
-    <div id="toast" class="toast"></div>
-
-    <script>
-      function showToast(message, color = "#222") {
-    const toast = document.getElementById("toast");
-    toast.textContent = message;
-    toast.style.backgroundColor = color;
-    toast.classList.add("show");
-
-    setTimeout(() => {
-        toast.classList.remove("show");
-    }, 4000);
-}
-
-        document.getElementById("contact-form").addEventListener("submit", function (e) {
-            e.preventDefault(); // tahan pengiriman form
-
-            const email = document.getElementById("email").value.trim().toLowerCase();
-const message = document.getElementById("message").value.toLowerCase();
-const button = document.querySelector(".submit-btn");
-
-const blockedEmails = [
-    "kepo321@gmail.com",
-    "isengbanget@yahoo.com",
-    "spamtester@mail.com"
-];
-
-if (blockedEmails.includes(email)) {
-    showToast("Email ini telah diblokir. Gunakan email lain.", "#e74c3c");
-    button.disabled = false;
-    button.textContent = "Send Message";
-    return;
-}
-
-const blockedWords = ["anjing", "ajg", "anjg", "bego", "bodoh", "bdh", "bloon", "oon", "pea", "bangsat", "tolol", "tai", "kontol", "kntl", "kntol", "kontl", "memek", "mmk", "memk", "mmek", "idiot", "anjir", "anjay", "goblok", "gblk"];
-const containsBlockedWord = blockedWords.some(word => message.includes(word));
-if (containsBlockedWord) {
-    showToast("Pesan mengandung kata tidak sopan. Harap gunakan bahasa yang baik.", "#e74c3c");
-    
-    button.disabled = false;
-    button.textContent = "Send Message";
-    return;
-}
-
-            button.disabled = true;
-            button.textContent = "Checking email...";
-
-            // Panggil Abstract API
-            fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=91420962874f4900b45fd85b6ae29d5a&email=${email}`)
-                .then(res => res.json())
-                .then(data => {
-                    const status = data.deliverability;
-                    const isDisposable = data.is_disposable_email.value;
-                    const isValidFormat = data.is_valid_format.value;
-
-                    if (status !== "DELIVERABLE" || isDisposable || !isValidFormat) {
-                        showToast("Email ini tidak valid atau tidak aktif. Silakan gunakan email asli.", "#e74c3c");
-                        button.disabled = false;
-                        button.textContent = "Send Message";
-                        return;
-                    }
-
-                    // Jika lolos semua, submit form ke Web3Forms
-                    document.getElementById("contact-form").submit();
-                })
-                .catch(error => {
-                    showToast("Gagal mengecek email. Coba lagi nanti.", "#c0392b");
-                    button.disabled = false;
-                    button.textContent = "Send Message";
-                    console.error(error);
-                });
-        });
-    </script>
-</section>
-    </main>
-
-    <!-- Footer section -->
     <footer>
         <p>&copy; 2025 Sadulur Sepoor ID. Semua Hak Dilindungi.</p>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            document.querySelector('nav').classList.toggle('show');
+        }
+
+        const username = sessionStorage.getItem('username');
+        const kta = sessionStorage.getItem('kta');
+
+        if (!username || !kta) {
+            alert("Anda harus login terlebih dahulu!");
+            window.location.href = 'index.html';
+        }
+
+        document.getElementById('welcome-message').textContent = `Selamat datang, ${username}`;
+        document.getElementById('member-kta').textContent = `Nomor KTA: ${kta}`;
+
+        let currentIndex = 0;
+        const newsList = document.querySelector('.news-list');
+        const items = document.querySelectorAll('.news-list li');
+        const totalItems = items.length;
+
+        function showSlide(index) {
+            newsList.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            showSlide(currentIndex);
+        }
+
+        let slideInterval = setInterval(nextSlide, 5000);
+
+        newsList.addEventListener('mouseover', () => clearInterval(slideInterval));
+        newsList.addEventListener('mouseout', () => slideInterval = setInterval(nextSlide, 5000));
+
+        let startX = 0;
+        let endX = 0;
+
+        newsList.addEventListener('touchstart', (e) => {
+            startX = e.touches[0].clientX;
+        });
+
+        newsList.addEventListener('touchmove', (e) => {
+            endX = e.touches[0].clientX;
+        });
+
+        newsList.addEventListener('touchend', () => {
+            if (startX - endX > 50) nextSlide();
+            else if (endX - startX > 50) {
+                currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+                showSlide(currentIndex);
+            }
+        });
+    </script>
 </body>
 </html>
