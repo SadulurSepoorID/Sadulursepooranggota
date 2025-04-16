@@ -1,72 +1,230 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daftar Anggota - Sadulur Sepoor Indonesia</title>
-    <link rel="stylesheet" href="anggota.css">
-    <script defer src="anggota.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Landing Page</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+    html {
+    scroll-behavior: smooth;
+}
+        .pengurus-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .pengurus-details {
+            flex-grow: 1;
+        }
+        .pengurus-photo {
+            margin-left: 20px;
+        }
+        .pengurus-photo img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Header section -->
     <header>
-        <h1>Daftar Anggota Sadulur Sepoor Indonesia</h1>
-        <div class="search-sort-container">
-            <input type="text" id="searchInput" placeholder="Cari Nama atau Nomor KTA..." onkeyup="searchMembers()">
-            <div class="sort-icon" onclick="toggleSortOptions()">
-                <i class="fas fa-filter"></i>
-            </div>
-            <div id="sortOptions" class="sort-options">
-                <button data-sort="name-asc">Nama A-Z</button>
-                <button data-sort="name-desc">Nama Z-A</button>
-                <button data-sort="id-asc">Nomor Identitas</button>
-                <button class="sector-filter" data-sector="1 Jakarta">Sektor 1 Jakarta</button>
-                <button class="sector-filter" data-sector="2 Bandung">Sektor 2 Bandung</button>
-            </div>
+        <nav>
+          <img src="https://i.imgur.com/9rAb7r7.png" alt="Logo" class="logo">
+            <div class="hamburger" onclick="toggleMenu()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
         </div>
+        </nav>
     </header>
+<nav id="menu" class="menu">
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="http://www.google.com/url?q=http%3A%2F%2Fbit.ly%2FPendaftaranSadulurSepoor&sa=D&sntz=1&usg=AOvVaw2Y76CFGcM5kRmJ5jgzA-53">Register</a></li>
+            <li><a href="formulir.html">Wawancara</a></li>
+        </ul>
+    </nav>
+     <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.classList.toggle('active');
+        }
+    </script>
+    <!-- Main section -->
+    <main>
+      <section id="features">
+    <div class="feature">
+        <h3>APA ITU KOMUNITAS SADULUR SEPOOR ?</h3>
+        <p>Komunitas Railfans SADULUR SEPOOR yang lebih dikenal komunitas SS merupakan wadah bagi para pecinta kereta api Indonesia baik yang berasal  dari individu/perorangan maupun kelompok/komunitas/organisasi lainnya. Didirikan oleh Herie Heryadi, Arjuna Pamungkas, Aldino Arya Saputra, Habibi Muhammad Arkam dan Ahmad Suseno pada tanggal 19 Maret 2019 di Cikini Jakarta Pusat.</p>
+    </div>
+    <div class="feature">
+        <h3>VISI</h3>
+        <p>Menjadi komunitas yang di segani dan sebagai penggerak perubahan masyarakat perkeretaapian yang lebih baik dan disiplin, rasa memiliki yang tinggi, saling menghormati dan ikut serta menjaga aset aset perkeretaapian</p>
+    </div>
+    <div class="feature">
+        <h3>MISI</h3>
+        <p>Mendorong regulator dan operator untuk menghasilkan keputusan-keputusan yang memberi manfaat untuk perkeretaapian menjadi lebih baik.</p>
+        <p>Mengajak serta semua pengguna dan atau masyarakat untuk memahami dan mematuhi ketentuan-ketentuan yang telah ditetapkan Regulator dan Operator serta menanamkan rasa memiliki yang tinggi terhadap perkeretaapian</p>
+    </div>
+</section>
 
-    <main id="membersContainer"></main>
+        <section id="home">
+            <h1>Profil</h1>
+            <p>Yuk kita intip apa saja kegiatan yang sudah dilakukan Sadulur Sepoor terutama untuk masyarakat sekitar. Penasaran ya? di pencet tombol yang di bawah yaa</p>
+            <a href="profile2.html" class="button">Profil</a>
+            </section>
 
-<!-- Popup Input Kode Verifikasi -->
-<div id="codeVerificationPopup" class="code-verification-popup" style="display: none;">
-    <div class="popup-content">
-        <h2>Masukkan Kode Verifikasi</h2>
-        <p id="verificationInfo"></p>
-        <input type="text" id="verificationCodeInput" placeholder="Masukkan Kode di sini">
-        <div class="popup-buttons">
-            <button onclick="closeCodePopup()">Batal</button>
-            <button onclick="verifyCode()">Lanjut</button>
-        </div>
-        <button class="request-code-button" onclick="requestVerificationCode()">
-            Minta Kode
-        </button>
+        <section id="home">
+            <h1>SSMAIL</h1>
+            <p>SSMAIL menyimpan berbagai file arsip resmi yang dapat diakses oleh anggota. Setiap dokumen disusun berdasarkan kategori dan dilengkapi dengan deskripsi singkat.</p>
+            <a href="loginmail.html" class="button">SSMAIL</a>
+            </section>
+
+        <section id="about">
+            <h2>Susunan Kepengurusan</h2>
+            <p>"Tak kenal maka tak sayang"</p>
+            <p>Tau kata-kata itu kan? nah... daripada emosional, mending kenalan sama pengurus yang sekarang</p>
+            <div class="pengurus-container">
+    <div class="pengurus-details">
+        <h3>Herie Haryadi</h3>
+        <p>Jabatan: Pembina & Penasehat Sadulur Sepoor</p>
+        <p>Domisili: Jakarta Utara</p>
+    </div>
+    <div class="pengurus-photo">
+        <img src="https://i.ibb.co.com/bmH1Dcz/IMG-20240923-184352.jpg">
     </div>
 </div>
-<!-- Notifikasi Kode Verifikasi Berhasil -->
-<div id="successNotification" class="success-notification" style="display: none;">
-    <div class="notification-content">
-        <div class="checkmark">
-            <div class="checkmark-circle">
-                <i class="fas fa-check checkmark-icon"></i>
-            </div>
-        </div>
-        <h2>Verifikasi Berhasil!</h2>
-        <p>Anda akan diarahkan ke WhatsApp...</p>
-    </div>
-</div>
 
-<!-- Notifikasi Kode Tidak Valid -->
-<div id="errorNotification" class="error-notification" style="display: none;">
-    <div class="notification-content">
-        <div class="crossmark">
-            <div class="crossmark-circle">
-                <i class="fas fa-times crossmark-icon"></i>
-            </div>
-        </div>
-        <h2>Kode Tidak Valid!</h2>
-        <p>Silakan periksa kembali kode verifikasi Anda.</p>
+<div class="pengurus-container">
+    <div class="pengurus-details">
+        <h3>Arjuna Pamungkas</h3>
+        <p>Jabatan: Ketua Sadulur Sepoor</p>
+        <p>Domisili: Jakarta Timur</p>
     </div>
-</div>
+    <div class="pengurus-photo">
+        <img src="https://i.ibb.co.com/WV5h00V/IMG-20240923-184411.jpg">
+    </div>
+   </div>
+   
+<div class="pengurus-container">
+    <div class="pengurus-details">
+        <h3>Mohammad Walid Ridho</h3>
+        <p>Jabatan: Wakil Ketua Sadulur Sepoor</p>
+        <p>Domisili: Jakarta Pusat</p>
+    </div>
+    <div class="pengurus-photo">
+        <img src="https://i.ibb.co.com/gP8vGGr/IMG-20240923-185525.jpg">
+    </div>
+   </div>
+   <a href="pengurus2.html" class="button">Lihat Susunan Kepengurusan</a>
+        </section>
+        <section id="services">
+            <h2>Akun Media Sosial</h2>
+            <ul>
+            <a href="https://youtube.com/@sadulursepoor" target="_blank">Youtube</a>
+            <a href="https://www.tiktok.com/@sadulur.sepoor_official?_t=8puqjiITt58&_r=1" target="_blank">Tiktok</a>
+            <a href="https://www.instagram.com/sadulursepoor_id?igsh=bHNvcTI4ZmNiejBv" target="_blank">Instagram</a>
+            </ul>
+        </section>
+        
+<section id="contact" class="form-container">
+    <h2>Contact Us</h2>
+    <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="480fcbcf-de9e-4081-b5a6-3099c8b2de28">
+
+        <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <textarea id="message" name="message" rows="4" placeholder="Your Message" required></textarea>
+
+        <button type="submit" class="submit-btn">Send Message</button>
+    </form>
+    <div id="toast" class="toast"></div>
+
+    <script>
+      function showToast(message, color = "#222") {
+    const toast = document.getElementById("toast");
+    toast.textContent = message;
+    toast.style.backgroundColor = color;
+    toast.classList.add("show");
+
+    setTimeout(() => {
+        toast.classList.remove("show");
+    }, 4000);
+}
+
+        document.getElementById("contact-form").addEventListener("submit", function (e) {
+            e.preventDefault(); // tahan pengiriman form
+
+            const email = document.getElementById("email").value.trim().toLowerCase();
+const message = document.getElementById("message").value.toLowerCase();
+const button = document.querySelector(".submit-btn");
+
+const blockedEmails = [
+    "kepo321@gmail.com",
+    "isengbanget@yahoo.com",
+    "spamtester@mail.com"
+];
+
+if (blockedEmails.includes(email)) {
+    showToast("Email ini telah diblokir. Gunakan email lain.", "#e74c3c");
+    button.disabled = false;
+    button.textContent = "Send Message";
+    return;
+}
+
+const blockedWords = ["anjing", "ajg", "anjg", "bego", "bodoh", "bdh", "bloon", "oon", "pea", "bangsat", "tolol", "tai", "kontol", "kntl", "kntol", "kontl", "memek", "mmk", "memk", "mmek", "idiot", "anjir", "anjay", "goblok", "gblk"];
+const containsBlockedWord = blockedWords.some(word => message.includes(word));
+if (containsBlockedWord) {
+    showToast("Pesan mengandung kata tidak sopan. Harap gunakan bahasa yang baik.", "#e74c3c");
+    
+    button.disabled = false;
+    button.textContent = "Send Message";
+    return;
+}
+
+            button.disabled = true;
+            button.textContent = "Checking email...";
+
+            // Panggil Abstract API
+            fetch(`https://emailvalidation.abstractapi.com/v1/?api_key=91420962874f4900b45fd85b6ae29d5a&email=${email}`)
+                .then(res => res.json())
+                .then(data => {
+                    const status = data.deliverability;
+                    const isDisposable = data.is_disposable_email.value;
+                    const isValidFormat = data.is_valid_format.value;
+
+                    if (status !== "DELIVERABLE" || isDisposable || !isValidFormat) {
+                        showToast("Email ini tidak valid atau tidak aktif. Silakan gunakan email asli.", "#e74c3c");
+                        button.disabled = false;
+                        button.textContent = "Send Message";
+                        return;
+                    }
+
+                    // Jika lolos semua, submit form ke Web3Forms
+                    document.getElementById("contact-form").submit();
+                })
+                .catch(error => {
+                    showToast("Gagal mengecek email. Coba lagi nanti.", "#c0392b");
+                    button.disabled = false;
+                    button.textContent = "Send Message";
+                    console.error(error);
+                });
+        });
+    </script>
+</section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2025 Sadulur Sepoor ID. Semua Hak Dilindungi.</p>
+    </footer>
+
 </body>
 </html>
