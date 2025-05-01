@@ -644,7 +644,7 @@
     "jenisKelamin": "Pria",
     "domisili": "Ragunan",
     "tanggalLahir": "",
-    "photoUrl": "",
+    "photoUrl": "https://i.imgur.com/oQPQpkG.jpeg",
     "whatsapp": "",
     "instagram": ""
 },
@@ -687,6 +687,17 @@
     "sektor": "1 Jakarta",
     "jenisKelamin": "Pria",
     "domisili": "Lebak",
+    "tanggalLahir": "",
+    "photoUrl": "",
+    "whatsapp": "",
+    "instagram": ""
+},
+{
+    "name": "Muhamad Fajri Ridho",
+    "kta": "SS-0176",
+    "sektor": "1 Jakarta",
+    "jenisKelamin": "Pria",
+    "domisili": "Cilodong",
     "tanggalLahir": "",
     "photoUrl": "",
     "whatsapp": "",
