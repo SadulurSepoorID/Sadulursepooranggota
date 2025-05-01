@@ -150,6 +150,14 @@ function requestPhoto(name, kta) {
     document.body.appendChild(confirmationBox);
 }
 
+function redirectToWhatsApp(name, kta) {
+    const message = `Halo Admin, saya ingin mengganti atau menambahkan foto untuk:\n\nNama: ${name}\nKTA: ${kta}\n\nMohon panduannya, terima kasih.`;
+    const phoneNumber = "6282112964343"; // Ganti dengan nomor admin utama jika perlu
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank');
+    closeConfirmation();
+}
+
 // Fungsi Menutup Notifikasi
 function closeConfirmation() {
     document.querySelector('.photo-confirmation').remove();
