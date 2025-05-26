@@ -7,7 +7,7 @@ let activeSort = null;
 // Kode khusus admin dan kode acak untuk pengguna
 const adminCode = "Sadulursepoor12";
 const userCodes = [
-    "A1B2C", "X9Y8Z", "K3L4M", "G7H8I", "P5Q6R",
+    "A1B2C", "SSJKT", "X9Y8Z", "K3L4M", "G7H8I", "P5Q6R",
     "U1V2W", "N3O4P", "Z5Y6X", "D7E8F", "M9N0O",
     "J1K2L", "T3U4V", "W5X6Y", "B7C8D", "H9I0J"
 ];
@@ -45,7 +45,7 @@ function displayMembers(members) {
             <div class="card-header">${member.name}</div>
             <div class="card-body">
                 <div class="card-text">
-                    <p><strong>Nomor Identitas:</strong> ${member.kta}</p>
+                    <p><strong>NIA:</strong> ${member.kta}</p>
                     <p><strong>Jenis Kelamin:</strong> ${member.jenisKelamin}</p>
                     <p><strong>Domisili:</strong> ${member.domisili}</p>
                     <p><strong>Sektor:</strong> ${member.sektor}</p>
@@ -82,10 +82,22 @@ function searchMembers() {
     });
 }
 
-// Tampilkan atau Sembunyikan Opsi Sortir
-function toggleSortOptions() {
-    const sortOptions = document.getElementById('sortOptions');
-    sortOptions.style.display = (sortOptions.style.display === 'block') ? 'none' : 'block';
+// Tampilkan atau Sembunyikan Opsi Filter - DIPERBAIKI
+function toggleFilterOptions() {
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    const isVisible = filterDropdown.style.display === 'block';
+    
+    if (isVisible) {
+        filterDropdown.style.display = 'none';
+    } else {
+        filterDropdown.style.display = 'block';
+    }
+}
+
+// Fungsi untuk menutup filter dropdown
+function closeFilterDropdown() {
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    filterDropdown.style.display = 'none';
 }
 
 // Fungsi untuk Filter Sektor
@@ -106,6 +118,9 @@ function filterBySector(button, sector) {
     } else {
         displayMembers(filteredMembers);
     }
+    
+    // Tutup dropdown setelah memilih filter
+    closeFilterDropdown();
 }
 
 // Fungsi untuk Sortir Anggota
@@ -127,6 +142,9 @@ function sortMembers(criteria) {
     }
 
     displayMembers(sortedMembers);
+    
+    // Tutup dropdown setelah memilih sort
+    closeFilterDropdown();
 }
 
 // Fungsi Menampilkan Notifikasi Tambah Foto
@@ -139,7 +157,7 @@ function requestPhoto(name, kta) {
                 <i class="fas fa-camera-retro"></i>
                 <h2>Tambahkan Foto</h2>
             </div>
-            <p>Anda ingin menambahkan foto untuk <strong>${name} (KTA: ${kta})</strong>?</p>
+            <p>Anda ingin menambahkan foto untuk <strong>${name} (${kta})</strong>?</p>
             <p class="photo-guideline">Pakaian dan gaya menyesuaikan diri asalkan rapi dan sopan.</p>
             <div class="confirmation-buttons">
                 <button class="cancel-button" onclick="closeConfirmation()">Batal</button>
@@ -232,15 +250,47 @@ function requestVerificationCode() {
     window.location.href = randomAdminLink;
 }
 
+// Event listener untuk menutup filter dropdown ketika klik di luar area
+document.addEventListener('click', function(event) {
+    const filterSection = document.querySelector('.filter-section');
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    
+    // Cek apakah klik terjadi di luar filter section
+    if (filterSection && !filterSection.contains(event.target)) {
+        if (filterDropdown) {
+            filterDropdown.style.display = 'none';
+        }
+    }
+});
+
 // Tambahkan event listener untuk tombol filter dan sortir
 document.addEventListener('DOMContentLoaded', () => {
+    // Event listener untuk tombol filter
+    const filterBtn = document.querySelector('.filter-btn');
+    if (filterBtn) {
+        filterBtn.addEventListener('click', function(event) {
+            event.stopPropagation(); // Mencegah event bubbling
+            toggleFilterOptions();
+        });
+    }
+
+    // Event listener untuk filter dropdown agar tidak menutup ketika diklik
+    const filterDropdown = document.querySelector('.filter-dropdown');
+    if (filterDropdown) {
+        filterDropdown.addEventListener('click', function(event) {
+            event.stopPropagation(); // Mencegah event bubbling
+        });
+    }
+
+    // Event listener untuk sector filter buttons
     document.querySelectorAll('.sector-filter').forEach(button => {
         button.addEventListener('click', function() {
             filterBySector(this, this.getAttribute('data-sector'));
         });
     });
 
-    document.querySelectorAll('.sort-options button').forEach(button => {
+    // Event listener untuk sort options buttons
+    document.querySelectorAll('[data-sort]').forEach(button => {
         button.addEventListener('click', function() {
             sortMembers(this.getAttribute('data-sort'));
         });
