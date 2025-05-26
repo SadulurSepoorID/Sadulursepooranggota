@@ -1012,16 +1012,38 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header-content {
-        padding: 1.5rem;
+        padding: 1rem; /* Reduced from 1.5rem */
+    }
+    
+    .header-text h1 {
+        font-size: 1.4rem; /* Reduced title size */
+        margin-bottom: 0.25rem; /* Reduced margin */
+    }
+    
+    .subtitle {
+        font-size: 0.85rem; /* Reduced subtitle size */
+        margin-bottom: 0.75rem; /* Reduced margin */
+    }
+    
+    .logo-icon {
+        width: 45px; /* Reduced from default */
+        height: 45px; /* Reduced from default */
+        margin-bottom: 0.5rem; /* Reduced margin */
+    }
+    
+    .logo-icon i {
+        font-size: 18px; /* Reduced icon size */
     }
     
     .search-controls {
         flex-direction: column;
         align-items: stretch;
+        margin-top: 0.75rem; /* Reduced spacing */
     }
     
     .search-container {
         min-width: unset;
+        margin-bottom: 0.5rem; /* Reduced spacing */
     }
     
     /* Mobile Filter Dropdown */
@@ -1132,29 +1154,40 @@ body {
 }
 
 @media (max-width: 480px) {
+    .header-content {
+        padding: 0.75rem; /* Further reduced for small screens */
+    }
+    
+    .header-text h1 {
+        font-size: 1.2rem; /* Further reduced title size */
+        margin-bottom: 0.2rem;
+    }
+    
+    .subtitle {
+        font-size: 0.8rem; /* Further reduced subtitle size */
+        margin-bottom: 0.5rem;
+    }
+    
+    .logo-icon {
+        width: 40px; /* Further reduced */
+        height: 40px; /* Further reduced */
+        margin-bottom: 0.25rem;
+    }
+    
+    .logo-icon i {
+        font-size: 16px; /* Further reduced icon size */
+    }
+    
+    .search-controls {
+        margin-top: 0.5rem; /* Further reduced spacing */
+    }
+    
     .members-grid {
         grid-template-columns: 1fr;
     }
     
     .member-card {
         min-width: unset;
-    }
-    
-    .header-text h1 {
-        font-size: 1.5rem;
-    }
-    
-    .subtitle {
-        font-size: 0.9rem;
-    }
-    
-    .logo-icon {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .logo-icon i {
-        font-size: 20px;
     }
     
     .stat-item {
