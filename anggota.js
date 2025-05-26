@@ -1,4 +1,4 @@
-// Variabel Global
+// VariabEl Global
 let originalMembers = [];
 let filteredMembers = [];
 let activeSectorFilter = null;
